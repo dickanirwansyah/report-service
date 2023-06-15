@@ -1,0 +1,19 @@
+#configuration database
+# download jasypt-version.jar
+# run jasypt decrypt -> java -cp jasypt-1.9.3.jar org.jasypt.intf.cli.JasyptPBEStringDecryptionCLI input="OK53l8CeNB2GTG/VUrPBbQsznDI2wiAM" password=SimplePassword algorithm=PBEWithMD5AndDES
+# run jasypt encrypt -> java -cp jasypt-1.9.3.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input="root" password=SimplePassword algorithm=PBEWithMD5AndDES
+server:
+  port: 8881
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dbreporting
+    username: postgres
+    password: root
+#    password: ENC(FX8GD3h7LwMQHRPKZNp8Ag==)
+  jpa:
+    hibernate:
+      ddl-auto: update
+destination:
+  file: D:\java\project\report-service\file
+upload:
+  file: D:\upload-dev
